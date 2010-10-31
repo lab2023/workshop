@@ -1,0 +1,49 @@
+*
+{
+   
+    font-family: 'Josefin Sans Std Light', serif;
+	font-size:25px;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 3px;
+	line-height: 30px;
+}
+body,html
+{
+	margin: 15px;
+}
+li
+{
+	list-style-type: none;
+}
+a
+{
+	color: #7bafce;
+	outline: none
+	text-decoration: none;
+}
+p {margin-top:20px; text-align:justify;}
+a:visited
+{
+	color: #7bafce;
+}
+a:hover
+{
+	color: #b3ddf7;
+}
+h1
+{
+	font-size: 65px;
+	font-smooth: always;
+	letter-spacing: -2px;
+	line-height: 89px;
+	margin-top: 20px;
+}
+h2
+{
+	font-size: 48px;
+	font-smooth: always;
+	font-weight: normal;
+	letter-spacing: -1px;
+	margin-top: 0;
+}
