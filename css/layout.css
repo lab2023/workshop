@@ -6,6 +6,7 @@
 	margin: 0;
 	padding: 0;
 	letter-spacing: 3px;
+    text-shadow: 5px 5px 5px #ccc;
 	line-height: 30px;
 }
 body,html
