@@ -13,6 +13,7 @@ body,html
 {
 	margin: 15px;
 }
+ol, ul {margin-left:40px;}
 a
 {
 	color: #7bafce;
