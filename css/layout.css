@@ -49,3 +49,13 @@ h2 {
     padding:5px;
     font-size:20px;
 }
+#index-img {
+    float:right;
+    padding:50px;
+}
+#fork-me-on-github {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    border: 0;
+}
