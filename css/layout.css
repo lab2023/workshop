@@ -41,8 +41,8 @@ h2 {
 	margin-top: 15px;
 }
 #container {
-    margin-left:35px;
-    margin-right:20px;
+    margin-left:45px;
+    margin-right:35px;
 }
 #breadcrumbs {
     border-bottom:1px solid #dedede;
@@ -58,4 +58,9 @@ h2 {
     top: 0; 
     right: 0; 
     border: 0;
+}
+p.author {
+    font-style: italic;
+    text-align:right;
+    
 }
