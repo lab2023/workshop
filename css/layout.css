@@ -14,6 +14,7 @@ body,html
 	margin: 15px;
 }
 ol, ul {margin-left:40px;}
+
 a
 {
 	color: #7bafce;
@@ -43,5 +44,11 @@ h2
 	font-smooth: always;
 	font-weight: normal;
 	letter-spacing: -1px;
-	margin-top: 0;
+	margin-top: 15px;
+}
+
+#breadcrumbs {
+    border:1px solid #dedede;
+    height:2.3em;
+    line-height:2.3em;
 }
