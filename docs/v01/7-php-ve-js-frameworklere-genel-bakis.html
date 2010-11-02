@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <meta name="Author" content="lab2023 - internet teknolojileri: http://www.lab2023.com/" />
+    <meta name="Author-Corporate" content="&copy; 2010 lab2023 - internet teknolojileri: http://www.lab2023.com/" />
+    <meta name="copyright" content="&copy; lab2023 - internet teknolojileri: http://www.lab2023.com/" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <title>PHP ve JS Frameworklere genel bakış - lab2023 - seminer notları</title>
+
+    <link  href="http://fonts.googleapis.com/css?family=Josefin+Sans+Std+Light:regular&subset=latin" rel="stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" href="../../css/layout.css" media="screen" />
+    <link rel="icon" type="image/png" href="../../images/favicon.png" />
+</head>
+<body>
+
+<div id="container">
+    
+    <p id="breadcrumbs">
+        <a href="../../index.html" alt="Ana Sayfa">Ana Sayfa</a> > 
+        <a href="../../index.html#07Kasim2010">07.Kasım.2010</a> > 
+        PHP ve JS Frameworklere genel bakış 
+    </p>
+
+    <h1>PHP ve JS Frameworklere genel bakış</h1>
+    
+    <h2>İçindekiler</h2>
+    
+    <ol>
+        <li><a href="#giris" alt="Giriş">Giriş</a></li>
+        <li><a href="#framework-kavrami" alt="Framework Kavramı">Framework kavramı</a></li>
+        <li><a href="#php-frameworkler" alt="PHP Frameworkler">PHP frameworkler</a></li>
+        <li><a href="#js-frameworkler" alt="JS Frameworkler">JS frameworkler</a></li>
+        <li><a href="#peki-hangisini-sececegim" alt="Peki hangisini seçeceğim ?">Peki hangisini seçeceğim ?</a></li>        
+        <li><a href="#hizli-baslangic-ve-sonuc-icin-benim-onerilerim" alt="Hızlı başlangıç ve sonuç için benim önerilerim">Hızlı başlangıç ve sonuç için benim önerilerim</a></li>
+        <li><a href="#sonuc" alt="Sonuç">Sonuç</a></li>
+    </ol> 
+    
+    
+    <h2><a name="giris">Giriş</a></h2>
+    <p>“Hibrit geliştiricler olduk!” Evet bu terimi geçenlerde bir yazıda okumuştum ve hemen hayatıma dahil ettim. Ne anlama geliyor diyeceksiniz. Bizler artık web'in ne kadar hızla geliştiğini ve bunu yakından takip etmemizin ne kadar önemli olduğunun farkındayız. Peki bu takip yarışını başarabilmek için sadece bir alanda uzmanlaşmak yeterli midir. Elbette uzmanlaşmak çok önemlidir ama bir alan beraberinde bir çok yan dal ile birlikte gelmektedir. Örneğin biz kendimize web geliştiricisi diyoruz ama çoğumuz sadece kodlama yapmıyoruz. Bu süreçlerin içerisinde analizden tutun da veri tabanı tasarımına, arayüz tasarımı, görsel tasarımlar, grafik tasarım v.b. bir çok alana zaman zaman dallanmak zorunda kaldığımız olmuştur. İşte bunca çok alanla bir şekilde -zaruriyetten- uğraşan ve bu konular hakkında bilgisi olan bizlere hibrit geliştiriciler deniyor. Bunu örneklemek gerekirse; hem benzinle hem de güneş enerjisi ile çalışabilen araçlar sanırım çok net açıklayacaktır.</p>
+    <p>Bunca çok alanla uğraşmamız gerektiğinden üretim süreçlerimizi hızlandırmamızı artık kaçınılmaz olmuştur. İşlerimizde vakitin nakit oldugunu düşünürsek hangi alanda ne üretiyor olursak olalım mutlaka frameworkleri (uygulama çatılarını) kullanmamız gerekmektedir. Frameworkler hayatımızı kolaylaştırmak, zamandan kazandırmak, bilgi ve deneyimlerimizi arttırmak, hızlı üretmemiz için yanıbaşımızdalardır. Onları kullanın!</p>
+    
+    
+    <h2><a name="framework-kavrami">Framework kavramı</a></h2>
+    <p>Framework – uygulama çatısı, belli amaç için bir araya getirilmiş, belirli bir işi yapmak üzere oluşturulmuş bir mimari yapıdır. Bu mimari yapı geliştirilen uygulamanın içeriğine göre bünyesinde bir çok araç barındırabilir. Bu gün uygulama çatılarının, yazılım geliştirme, web uygulamaları geliştirme, tasarım ve modelleme gibi bir çok farklı alanda kullanıldığını görüyoruz.</p>
+    <p>Uygulama çatıları geliştiricileri belirli bir standartta kodlama yapmaya teşvik eder. Yaptığımız bir çok rutin işi bir araya getirilmiş kütüphane ve araçlarla tekrar tekrar yazmadan sadece kullanma yöntemi ile hızlı bir şekilde çözmemizi sağlar. Böylelikle kod tekrarları yapmaktan kurtulmuş oluruz. Örneğin bir çok uygulama çatısı, veri tabanı sınıfları, şablon özellikleri, oturum yönetimi, modüler yapılar, kod üreticiler gibi faydalı araçları bünyesinde barındırmaktadır.</p>
+    <p>Özetle framework'ler projelerimize odaklanmamızı sağlayarak mimari kurma ve rutin süreçleri çözmekle boğuşmak yerine hızlı bir şekilde üretim yapmamızı sağlayan ortamlardır. Ayrıca frameworklerin bir başka güzel yanı da geliştirici topluklarına dahil olarak o kişilerin bilgi ve deneyimlerinden yararlanmamızı sağlarken, bir çok alanda kendimizi ister istemez geliştirmemizi sağlamaktadır. Örneğin ben MVC yapısını ilk kullandığım CodeIgniter Framework sayesinde öğrenmiştim.</p>
+    
+    <h3>Frameworklerde bazı ön plana çıkan terimler;</h3>
+    <ul>
+        <li><strong>MVC (Model-View-Controller):</strong> Üç katmanlı mimari demektir. Uygulamamızın iş süreçlerini yöneten Controller katmanı, veri tabanı işlemlerini yaptığımız model katmanı ve kullanıcı arayüzlerine çıktı üreten view katmanlarını temsil eder. Uygulamamızı parçalara bölerek daha esnek bir geliştirme yapmamızı sağlar ve böylelikle iş süreçleri biribirine karışmaz.</li>
+        <li><strong>DRY ( Dont repeat your self):</strong> Kendini tekrarlama! Bu terim bir kere yaz heryerde kullan, az kod yaz gibi kavramlarla kısaca özetlenebilir.</li>
+        <li><strong>ORM (Object Relation Mapping):</strong> Oblejeler ile veri tabanı tablolarınızı ilişkilendirmenizi sağlar. Sınıflarınızı nesne yönelimli yapılar kurarak oluşturup, veri tabanı tablolarınıza sınıflarınızı kullanarak erişmenizi sağlayan bir yapıdır.</li>
+        <li><strong>Templates & Layouts (Tema ve Şablon):</strong> Uygulamanızın view katmanındakı arayüz şablonlarımızı oluşturmamızı ve bunları kolayca yönetip, birbirinden farklı tasarım şablonları kullanmamızı sağlayan yapılardır.</li>
+        <li><strong>Caching (Ön Bellekleme):</strong> Uygulamanızın çıktı katmanındakı verileri veya veri tabanı kayıtlarımız gibi alanları ön belleğe atarak performans kazanmamızı sağlayan yapılardır.</li>
+        <li><strong>Validation (Doğrulama):</strong> İş katmanında yada form alanları gibi kısımlarda yada veri tabanı kayıtları sırasındakı kontrolleri kolayca yapmamızı sağlayan özellikler bütünüdür.</li>
+        <li><strong>Modular Structure (Modüler Yapı):</strong> Uygulamamızdakı birbirinden bağımsız yada ilişkisel olarak çalışacak kısımları modüler olarak parçalara bölmemizi sağlar.</li>
+        <li><strong>Auth ve Acl (Yetkilendirme ve Rol):</strong> Uygulamamızdaki kullanıcıların yetkilendirilmeleri ve yetki seviyelerinin roller ile belirlenmesini sağlayarak erişim kontrollerimizi daha efektif yapmamızı sağlayan kısımlardır.</li>
+        <li><strong>Console (Konsol Kod Üreticiler):</strong> Kodlarımızı, veri tabanı işlemlerimizi, dizin yapılarımızı komut satırından basit komutlar yazarak üretmemizi sağlarlar. Örn: zf create project test_app</li>
+    </ul>
+    
+    <p>Gördüğünüz gibi bir framework ile çalışmaya başladığınızda bir çok yeni terim ve metodolojiyi de beraberinde getiriyor. Tüm bunlarla uğraşmak bizlerin sürekli kendimizi geliştirmemizde çok önemli rol oynamaktadır.</p>
+    
+    <h2><a name="php-frameworkler">PHP Frameworkler</a></h2>
+    <p><em>Hazırlanıyor....</em></p>
+    
+    <h2><a name="js-frameworkler">JS Frameworkler</a></h2>
+    <p><em>Hazırlanıyor....</em></p>
+    
+    <h2><a name="peki-hangisini-sececegim">Peki hangisini seçeceğim ?</a></h2>
+    <p><em>Hazırlanıyor....</em></p>
+    
+    <h3>Framework seçiminde dikkat edilmesi gereken bazı öenmli noktalar;</h3>
+    <ul>
+        <li>Performans ve genişletilebilirlik.</li>
+        <li>Toluluk desteğinin iyi olması.</li>
+        <li>Geliştiren ekibin güvenilir ve deneyimli olması. Örneğin Zend Framework'ü PHP geliştiriclerin hazırlaması gibi.</li>
+        <li>Kolay öğrenilebilirlik ve öğrenme eğrisinin düşük olması.</li>
+        <li>Kolay geliştirilebilirlik, yeterlilik, esneklik.</li>
+        <li>Sunduğu araç ve özelliklerin çokluğu.</li>
+    </ul>
+    
+    <h2><a name="hizli-baslangic-ve-sonuc-icin-benim-onerilerim">Hızlı başlangıç ve sonuç için önerilerim</a></h2>
+    <p><em>Hazırlanıyor....</em></p>
+    
+    <h2><a name="sonuc">Sonuç</a></h2>
+    <p><em>Hazırlanıyor....</em></p>
+    
+    <p class="author">Hazırlayan<br/>Tayfun Öziş ERİKAN</p>
+</div> 
+     
+</body>
+</html>
+
+
