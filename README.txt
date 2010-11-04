@@ -6,5 +6,5 @@ yeni çalışma ve takım arkadaşları bulmak için düzenli olarak seminerler 
 
 TODO
 --------------------------------------------------------------------------------
-1. Ekmek Kırıntısı eklenmeli
-2. lab2023, facebook, github linki eklenmeli
+[OK] 1. Ekmek Kırıntısı eklenmeli
+[OK] 2. lab2023, facebook, github linki eklenmeli
