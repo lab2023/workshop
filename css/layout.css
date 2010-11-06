@@ -40,6 +40,20 @@ h2 {
 	letter-spacing: -1px;
 	margin-top: 15px;
 }
+img.article-img {
+    padding:2px;
+    margin:10px;
+    background:#fff;
+    border:1px dashed silver;
+}
+blockquote {
+    padding:10px;
+    background:#F1F1F1;
+    font-style: italic;
+    border-top:1px dashed silver;
+    border-bottom:1px dashed silver;
+    
+}
 #container {
     margin-left:45px;
     margin-right:35px;
@@ -63,4 +77,13 @@ p.author {
     font-style: italic;
     text-align:right;
     
+}
+.left {
+    float:left;
+}
+.right {
+    float:right;
+}
+.clear {
+    clear:both;
 }
