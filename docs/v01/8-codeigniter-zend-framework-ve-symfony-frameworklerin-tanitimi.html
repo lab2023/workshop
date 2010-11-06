@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <meta name="Author" content="lab2023 - internet teknolojileri: http://www.lab2023.com/" />
+    <meta name="Author-Corporate" content="&copy; 2010 lab2023 - internet teknolojileri: http://www.lab2023.com/" />
+    <meta name="copyright" content="&copy; lab2023 - internet teknolojileri: http://www.lab2023.com/" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <title>CodeIgniter, Zend Framework ve Symfony PHP Frameworkler'in tanıtımı - lab2023 - seminer notları</title>
+
+    <link  href="http://fonts.googleapis.com/css?family=Josefin+Sans+Std+Light:regular&subset=latin" rel="stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" href="../../css/layout.css" media="screen" />
+    <link rel="icon" type="image/png" href="../../images/favicon.png" />
+</head>
+<body>
+
+<div id="container">
+    
+    <p id="breadcrumbs">
+        <a href="../../index.html" alt="Ana Sayfa">Ana Sayfa</a> > 
+        <a href="../../index.html#07Kasim2010">07.Kasım.2010</a> > 
+        CodeIgniter, Zend Framework ve Symfony PHP Frameworkler'in tanıtımı
+    </p>
+
+    <h1>CodeIgniter, Zend Framework ve Symfony<br />PHP Frameworkler'in tanıtımı</h1>
+    
+    <h2>İçindekiler</h2>
+    
+    <ol>
+        <li><a href="#codeigniter" alt="CodeIgnıter">CodeIgniter</a>
+        
+        <ul>
+           <li><a href="#codeigniter-giris" alt="Giriş">Giriş</a></li>
+           <li><a href="#codeigniter-desteklenen-ozellikler" alt="Desteklenen Özellikler">Desteklenen özellikler</a></li>
+           <li><a href="#codeigniter-uygulama-akis-semasi" alt="Uygulama Akış Şeması">Uygulama akış şeması</a></li>
+           <li><a href="#codeigniter-tasarim-ve-mimari-araclar" alt="Tasarım ve Mimari Amaçlar">Tasarım ve mimari amaçlar</a></li>
+           <li><a href="#codeigniter-kullanim-klavuzundan-genel-inceleme" alt="Kullanım Klavuzundan Genel İnceleme">Kullanım klavuzundan genel inceleme</a></li>
+           <li><a href="#codeigniter-yararlanabileceginiz-bazi-kaynaklar" alt="Yararlanabileceğiniz Bazı Kaynaklar">Yararlanabileceğiniz bazı kaynaklar</a></li>
+           <li><a href="#codeigniter-yol-haritasi" alt="Codeigniter'in Yol Haritası">Codeigniter'in yol haritası</a></li>
+        </ul>
+        
+        </li>
+        <li><a href="#zend-framework" alt="Zend Framework">Zend Framework</a></li>
+        <li><a href="#symfony" alt="Symfony">Symfony</a></li>
+        <li><a href="#symfony" alt="Symfony">Bu üç uygulama çatısının kıyaslanması</a></li>
+    </ol> 
+    
+    
+    <h2><a name="codeigniter">CodeIgniter</a></h2>
+    <p>"CodeIngiter, inanılmaz PHP programları yazmanıza yardımcı olan açık kaynaklı bir web uygulama çatısıdır."</p>    
+    <p>Evet gördüğünüz gibi iddialı bir sloganla karşıya çıkan CodeIgniter (fanları CI diye hitap eder), frameworklere yeni başlayanlar için en hızlı ve yumuşak geçişi sağlayacak PHP uygulama çatılarından birisidir. <a href="http://www.ellislab.com/" target="_blank">EllisLab</a> tarafından geliştirilmektedir. <a href="http://www.expressionengine.com/" target="_blank">ExpressionEngine</a> adındaki çok popüler bir içerik yönetim sisteminin gelişimine paralel olarak geliştirilmeye devam etmektedir.</p>
+    <blockquote>
+        <strong>Editörün Notu:</strong> <q>Bu bölümü hazırlarken kısa bir giriş yapıp ağırlıklı olarak çok temiz hazırlanmış <a href="http://codeigniter.com/user_guide/" target="_blank">CodeIgniter Kullanım Klavuzundan</a> yararlanacağım. Aşağıda gördüğünüz kısmındaki içeriklerin çoğunu <a href="http://codeigniter.gen.tr/" target="_blank">CodeIgniter Türkiye Grubu</a>'nun kurucusu <a href="http://fatih.bazman.net/" target="_blank">Fatih BAZMAN</a>'ın hazırladığı <a href="http://codeigniter.gen.tr/blog/user_guide/" target="_blank">Türkçe CodeIgniter Kullanma Klavuzundan</a> aldım. Kendisine teşekkürü borç bilirim.</q>
+    </blockquote>    
+    <p>CodeIgniter, PHP kullanarak kod yazan kişiler için geliştirilmiş bir Uygulama Geliştirme Çatısıdır. Yazdığınız kodların optimize edilerek hızlı, geliştirilmiş kütüphaneler yardımıyla basit arayüzler ve mantıksal yapı içinde çalışmasını sağlamayı amaç edinir. CodeIgniter, sadece projeniz için geliştireceğiniz kodlar üzerinde odaklanmanızı sağlar.</p>
+    <h3>CodeIgniter kimler içindir?</h3>
+    <p>Eğer aşağıdakilerden biriyseniz, CodeIgniter sizin için doğru bir seçimdir:</p>
+    <ul>
+        <li>Az yer kaplayan bir çatı altında program yazmak istiyorsanız.</li>
+        <li>Oloğanüstü bir performansa ihtiyacınız varsa.</li>
+        <li>Değişik PHP versiyon ve konfigürasyonlara sahip sunucular üzerinde çalışmaya uyumlu bir çatıya ihtiyacınız varsa.</li>
+        <li>Neredeyse sıfır konfigürasyona ihtiyaç duyan bir çatıya ihtiyacınız varsa.</li>
+        <li>Eğer çatıyı komut satırından kullanmaya ihtiyacınız yoksa.</li>
+        <li>Sınırlayıcı kodlama kurallarına bağlı kalmak istemiyorsanız.</li>
+        <li>PEAR gibi geniş ölçekli monolitik kütüphaneler ile ilgilenmiyorsanız.</li>
+        <li>Şablonlama dillerini öğrenmek istemiyorsanız (yine de eğer isterseniz şablon kullanımı da seçime bağlı olarak CodeIgniter'da vardır).</li>
+        <li>Karmaşıklıktan çekiniyorsanız, basit çözümler favorinizse.</li>
+        <li>Temiz ve anlaşılır bir dokümantasyona ihtiyacınız varsa.</li>
+    </ul>
+    
+    <h2><a name="codeigniter-desteklenen-ozellikler">Desteklenen özellikler</a></h2>
+    <p>Kullanıcı deneyimleri ya da nasıl akıllıca ya da öngörüyle tasarlandığı hakkında bir şey demeden, sadece özellikler hakkında konuşmak bir uygulamayı özelliklerine göre yargılamanın kötü yoludur. Özellikler, kodun kalitesini, performansını, detaylara dikkat edilip edilmediği ya da güvenlik uygulamaları hakkında hiçbir şey ortaya çıkarmaz. Bir uygulamayı gerçekten yargılamanın tek yolu kodlarını almak ve denemektir. Kurulum CodeIgniter için çocuk oyuncağıdır bu nedenle CodeIngiter geliştiricileri sizlerin denemenizi istiyorlar. Bu arada CodeIgniter'ın ana özellikleri listesi şöyledir.</p>
+    <ul>
+        <li>Model-View-Controller Tabanlı Sistem</li>
+        <li>PHP 4 uyumluluğu</li>
+        <li>Olağanüstü Hafiflik</li>
+        <li>Değişik platformlar için destek veren tam özellikli veritabanı sınıfı.</li>
+        <li>Active Record Veritabanı Desteği</li>
+        <li>Form ve data doğrulama</li>
+        <li>Güvenlik ve XSS Filtresi</li>
+        <li>Oturum Yönetimi</li>
+        <li>E-posta Gönderme Sınıfı. Ek Desteği, HTML/Text e-posta, çoklu protokoller (sendmail, SMTP, and Mail) ve fazlası.</li>
+        <li>Resim İşleme Kütüphanesi (kesme, yeniden boyutlandırma, döndürme, vs.).  GD, ImageMagick, ve NetPBM desteği</li>
+        <li>Dosya Yükleme Sınıfı</li>
+        <li>FTP Sınıfı</li>
+        <li>Yerelleştirme</li>
+        <li>Sayfalandırma</li>
+        <li>Data Şifreleme</li>
+        <li>Karşılaştırma</li>
+        <li>Tam Sayfa Hafızalandırma</li>
+        <li>Hata Kayıt</li>
+        <li>Uygulama Profili</li>
+        <li>İskele</li>
+        <li>Takvim Sınıfı</li>
+        <li>Kullanıcı Bilgileri Sınıfı</li>
+        <li>Zip Sıkıştırma Sınıfı</li>
+        <li>Şablon Derleme Sınıfı</li>
+        <li>Trackback Geri İzleme Sınıfı</li>
+        <li>XML-RPC Sınıfı</li>
+        <li>Unite Test Sınıfı</li>
+        <li>Arama-motoru Dostu URL</li>
+        <li>Esnek URL Yönlendirme</li>
+        <li>Kanca, Sınıf Genişletme ve Plugin Desteği</li>
+        <li>Helper fonksiyonları için geniş kütüphaneler</li>
+    </ul>
+        
+    <h2><a name="codeigniter-uygulama-akis-semasi">Uygulama akış şeması</a></h2>    
+    <p>Aşağıdaki çizim sistemdeki data akışını göstermektedir:</p>    
+    <p><img class="article-img" src="http://codeigniter.com/user_guide/images/appflowchart.gif" /></p>    
+    <ol>
+        <li>Index.php dosyası controller önyüzü olarak hizmet eder, CodeIgniter'ın ihtiyacı olan ana kaynaklarını başlatır.</li>
+        <li>Yönlendirici HTTP isteklerini denetleyip onlarla ne yapılacağını gözden geçririr.</li>
+        <li>Eğer önbellek dosyası mevcutsa, bu dosya tarayıcıya gönderilir, normal sistem çalışması atlanır.</li>
+        <li>Güvenlik. Uygulama Controller dosyası yüklenmeden önce, HTTP istemi ve kullanıcı girdi bilgileri güvenlik için filtrelenir.</li>
+        <li>Controller dosyası Model dosyasını, çekirdek kütüphanelerini, pluginleri, helperları ve işlem için özellikle ihtiyaç duyulan diğer dosylaarı yükler.</li>
+        <li>Sonuçta View dosyası görüntülenmek için web tarayıcısına gönderilir. Eğer önbellek seçiliyse, View önce önbeliği yeniler sonra takip eden istekleri gerçekleştirir.</li>
+    </ol>    
+    
+    <h2><a name="">Tasarım ve mimari amaçlar</a></h2>
+    <p>CodeIgniter geliştiricilerinin amacı <strong>küçük ve mümkün olduğunca hafif bir paket içinde maksimum performans, yetenek ve elastikliktir</strong>.</p>
+    <p>Bu amacı karşılamak için, kendilerini kıyaslamaya, yeniden düzenlemeye ve geliştirme prosesinin her adımında basitleştirmeye, amaçlarından  uzaklaştıran herşeyi bırakmaya adadılar.</p>
+    <p>Teknik ve mimari bakış açılarından, CodeIgniter ile aşağıdaki amaçları yarattılar:</p>
+    <ul>
+        <li><strong>Dinamik Kurulum:</strong>  CodeIgniter'da, bileşenler yüklenir ve rutinler küresel değil, ihtiyaç olunca çalıştırılır. Kabuller ederek sistem çalışmak yerine minimal çekirdek kaynaklarının ihtiyacını sağlayan oldukça hafif bir sistem varsıylarak çalışır. Olaylar, HTTP istemlerinin tetikler ve controller ile view dosyaları neyin gerektiğine karar verir.</li>
+        <li><strong>Gevşek Bağlantı:</strong>  Bağlantı, sistemin hangi bileşenlere dayanacağını gösteren bir derecedir. Az bileşen diğerlerine, tekrar kullanmasıyla ve sistemin elastik olmasıyla bağlıdır. Amaçları oldukça gevşek bağlantılı bir sistemdir.</li>
+        <li><strong>Bileşen Tekilliği:</strong>  Tekillik, hangi bileşene odaklanma amacını gösteren bir derecedir. CodeIgniter'da, her sınıf ve onların foksiyonu maksimum kullanışlığı sağlamak için özerkleştirilmiştir.</li>
+    </ul>
+    <p>CodeIgniter dinamik kurulumlu, bileşen tekilliğiyle gevşek bağlantılı bir sistemdir. Küçük bir dağıtım paketinde basitlik, elastiklik ve yüksek performans sağlama çabasındadır.</p>
+    
+    <h2><a name="codeigniter-kullanim-klavuzundan-genel-inceleme">Kullanım klavuzundan genel inceleme</a></h2>
+    <p>Bu bölümde CodeIgniter'in yalın, temiz ve oldukça anlaşılır bir dille hazırlanan Kullanım Klavuzunu genel hatlarıyla inceleyeceğiz. Bildiğim hatırladım kadarıyla size adım adım neyin ne işe yaradığını anlatmaya çalışacağım. Eğer düzenlediğimiz seminere katılmamış ve bu makaleyi sadece okuyorsanız, konuyu özetlediğim seminer videosunu izleyebilirsiniz.</p>
+    <ul>
+        <li><a href="http://codeigniter.com/user_guide/" target="_blank">CodeIgniter Kullanma Klavuzu (İngilizce)</a></li>
+        <li><a href="http://codeigniter.gen.tr/user_guide/" target="_blank">CodeIgniter Kullanma Klavuzu (Türkçe)</a></li>
+    </ul>
+    
+    <h2><a name="codeigniter-yararlanabileceginiz-bazi-kaynaklar">Yararlanabileceğiniz Bazı Kaynaklar</a></h2>
+    <ul>
+        <li><a href="http://net.tutsplus.com/tutorials/php/codeigniter-basics/" target="_blank">"CodeIgniter'e başlamanız için gereken herşey" adındaki NetTuts makalesi</a></li>     
+        <li><a href="http://codeigniter.com/tutorials/" target="_blank">CodeIgniter'i anlatan birkaç video (Şu 20 dk'da blog hazırlama videolarından da var)</a></li>
+        <li><a href="http://video.derekallard.com/application/" target="_blank">Derek Allard'ın hazırladığı videolu bir eğitim uygulaması</a></li>
+        <li><a href="http://philsturgeon.co.uk/news/2010/03/codeigniter-2/" target="_blank">CodeIgniter 2'de bulunan yeni özellikler hakkında bir makale</a></li>
+        <li><a href="http://www.codeigniter.gen.tr/tag/show/CodeIgniter/" target="_blank">CodeIgniter Türkiye grubundan bazı makaleler</a></li>
+        <li><a href="http://codeigniter.com/user_guide/overview/cheatsheets.html" target="_blank">CodeIgniter sınıf ve fonksiyonlarına genel bakış yapabileceğiniz şemalar (Cheetsheets)</a></li>
+        <li><a href="http://blog.shopigniter.com/wp-content/uploads/2010/06/inclued.ci-1.7.2.png" target="_blank">CodeIgniter sınıf bağımlılığını gösteren bir şema</a></li>
+    </ul>
+    
+    <h2><a name="codeigniter-yol-haritasi">Codeigniter'in yol haritası</a></h2>
+    <p>Bu gün CodeIgniter hakkettiği üne kavuşarak, dünyada bir çok geliştiricinin tercihi olmuştur. Böyle bir sistemi geliştirenler de her geçen gün ihtiyaçları artan geliştiricilere daha iyi hizmet sunabilmek ve uygulama çatılarının rekabetlerinden ötürü kendileririni sürekli yenilemektedirler.</p>
+    <p>CodeIgniter'in ExpressionEngine CMS ile paralel olarak geliştirildiğini söylemiştik. EllisLab tarafından geliştirilen bu ürünün 2.0 versiyonu ile birlikte CodeIgniter'in de 2.0 versiyonunun yolda olduğu uzun zaman önce duyuruldu. CodeIgniter 1.7.x sürümünden 2.0 sürümüne major bir değişiklikle atlamaya hazırlanıyor. Peki bu yeni versiyon beraberinde neleri getirecektir ?</p>
+    <ul>
+        <li>PHP 4 desteği bırakılarak, sadece PHP 5 desteği ile yola devam edecektir.</li>
+        <li>SVN'den Mercural alt yapısı sunan BitBucket'a taşınarak kapalı devre yerine social-coding olarak geliştirilmeye başlanmıştır.</li>
+        <li>Scaffholding ve plug-in kütüphaneleri kaldırılıyor.</li>
+        <li>Çekirdek, uygulama ve bazı dızınlerde yapısal değişikliğe gidiliyor.</li>
+        <li>Uygulama paketleri ekleniyor. Birden fazla uygulamanız için "application/_common" dizini aldında ortak dosyalar kullanabileceksiniz.</li>
+        <li>Driver (sürücü) sınıflarını yazmanıza olanak sağlanacak.</li>
+        <li>Veri tabanı ayarlarına birkaç yeni parametre daha ekleniyor.</li>
+        <li>CSRF kontrolü ekleniyor, XSS gibi atakların önleneceği kütüphaneler de dahil olmak üzere yeni security sınıfına taşınıyor.</li>
+    </ul>
+    
+    <h2><a name="zend-framework">Zend Framework</a></h2>
+    <p><q>PHP'nin ruhu ve sanatından esinlenen Zend Framework'ün temelinde, basitlik, nesne yönelimli prensiplerin en iyi uygulamaları, şirket dostu lisanslama ve çok ayrıntılı test edilmiş çevik kod alt yapısı barınmaktadır.</q></p> 
+    <p><em>Hazırlanıyor...</em></p> 
+        
+    <p class="author">Hazırlayan<br/>Tayfun Öziş ERİKAN</p>
+</div> 
+     
+</body>
+</html>
+
+
