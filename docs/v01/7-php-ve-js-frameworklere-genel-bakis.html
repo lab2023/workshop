@@ -29,6 +29,8 @@
 
     <h1>PHP ve JS Frameworklere genel bakış</h1>
     
+    <img src="../../images/v01/frameworks.jpg" alt="PHP ve JS Frameworklere genel bakış" class="article-img right" />
+    
     <h2>İçindekiler</h2>
     
     <ol>
@@ -42,7 +44,7 @@
     </ol> 
     
     
-    <h2><a name="giris">Giriş</a></h2>
+    <h2 class="clear"><a name="giris">Giriş</a></h2>
     <p>“Hibrit geliştiricler olduk!” Evet bu terimi geçenlerde bir yazıda okumuştum ve hemen hayatıma dahil ettim. Ne anlama geliyor diyeceksiniz. Bizler artık web'in ne kadar hızla geliştiğini ve bunu yakından takip etmemizin ne kadar önemli olduğunun farkındayız. Peki bu takip yarışını başarabilmek için sadece bir alanda uzmanlaşmak yeterli midir. Elbette uzmanlaşmak çok önemlidir ama bir alan beraberinde bir çok yan dal ile birlikte gelmektedir. Örneğin biz kendimize web geliştiricisi diyoruz ama çoğumuz sadece kodlama yapmıyoruz. Bu süreçlerin içerisinde analizden tutun da veri tabanı tasarımına, arayüz tasarımı, görsel tasarımlar, grafik tasarım v.b. bir çok alana zaman zaman dallanmak zorunda kaldığımız olmuştur. İşte bunca çok alanla bir şekilde -zaruriyetten- uğraşan ve bu konular hakkında bilgisi olan bizlere hibrit geliştiriciler deniyor. Bunu örneklemek gerekirse; hem benzinle hem de güneş enerjisi ile çalışabilen araçlar sanırım çok net açıklayacaktır.</p>
     <p>Bunca çok alanla uğraşmamız gerektiğinden üretim süreçlerimizi hızlandırmamızı artık kaçınılmaz olmuştur. İşlerimizde vakitin nakit oldugunu düşünürsek hangi alanda ne üretiyor olursak olalım mutlaka frameworkleri (uygulama çatılarını) kullanmamız gerekmektedir. Frameworkler hayatımızı kolaylaştırmak, zamandan kazandırmak, bilgi ve deneyimlerimizi arttırmak, hızlı üretmemiz için yanıbaşımızdalardır. Onları kullanın!</p>
     
@@ -67,6 +69,7 @@
     </ul>
     
     <h3>Frameworklerde bazı ön plana çıkan terimler</h3>
+    <img src="../../images/v01/mvc.png" width="400" alt="MVC (Model-View-Controller)" class="article-img right" />
     <ul>
         <li><strong>MVC (Model-View-Controller):</strong> Üç katmanlı mimari demektir. Uygulamamızın iş süreçlerini yöneten Controller katmanı, veri tabanı işlemlerini yaptığımız model katmanı ve kullanıcı arayüzlerine çıktı üreten view katmanlarını temsil eder. Uygulamamızı parçalara bölerek daha esnek bir geliştirme yapmamızı sağlar ve böylelikle iş süreçleri biribirine karışmaz.</li>
         <li><strong>DRY (Dont repeat your self):</strong> Kendini tekrarlama! Bu terim bir kere yaz heryerde kullan, az kod yaz gibi kavramlarla kısaca özetlenebilir.</li>
@@ -79,7 +82,6 @@
         <li><strong>Modular Structure (Modüler Yapı):</strong> Uygulamamızdakı birbirinden bağımsız yada ilişkisel olarak çalışacak kısımları modüler olarak parçalara bölmemizi sağlar.</li>
         <li><strong>Auth ve Acl (Yetkilendirme ve Rol):</strong> Uygulamamızdaki kullanıcıların yetkilendirilmeleri ve yetki seviyelerinin roller ile belirlenmesini sağlayarak erişim kontrollerimizi daha efektif yapmamızı sağlayan kısımlardır.</li>
         <li><strong>Console (Konsol Kod Üreticiler):</strong> Kodlarımızı, veri tabanı işlemlerimizi, dizin yapılarımızı komut satırından basit komutlar yazarak üretmemizi sağlarlar. Örn: zf create project test_app</li>
-
     </ul>
     
     <p>Gördüğünüz gibi bir framework ile çalışmaya başladığınızda bir çok yeni terim ve metodolojiyi de beraberinde getiriyor. Tüm bunlarla uğraşmak mesleki gelişimimizde çok önemli rol oynamaktadır.</p>
@@ -89,9 +91,9 @@
     <p>PHP Frameworkleri internette araştırmaya başladığınızda hemen gözünüze çarpacak olanlar Zend Framework, CakePHP, CodeIgniter, Symfony... gibi isimlerle karşılaşacaksınız. Bu liste okadar uzar gider ki bir süre sonra hepsi birbirine benzemeye başlar. Ama benim burada isimlerini verdiklerim bilinen en popülerleridir. Her birisinin birbirlerine göre avantaj ve dezavantajları vardır. Ama kendiniz detaylı araştırmak istersiniz diye ben yinede aşağıda kükük bir liste hazırladım.</p>
     <h3>Kısa bir araştırma sonucu bulunabilecek bazı PHP Frameworkler</h3>
     <ul>
-        <li><strong>CodeIgniter (CI): </strong> ExpressionEngine adındaki CMS ile paralel geliştirilen, çok geniş bir topluluğu bulunan, PHP4 ve PHP5 de çalışabilen, öğrenilmesi en kolay frameworklerden birisidir. İlk göz ağrımızdır. Bizi frameworkler ile tanıştırdığı ve ufkumuzu acaip açtığı için bende yeri ayrıdır.</li> 
-        <li><strong>Zend Framework (ZF): </strong> PHP Geliştiricileri tarafından hazırlanmıştır. PEAR kütüphaneleri gibi birbirinden bağımsız olarak kullanılmak üzere tasarlanmıştır. Bir araya geldiklerinde etkileşimli çalışacak kütüphaneler barındırır. OOP ve PHP5'i en katı şekilde uygulayan frameworklerden biridir. Öğrenilmesi biraz zor ama uzun vadede arkanızda sağlam bir şekilde duracak en kurumsal uygulama çatısıdır. <a href="http://www.lab2023.com" target="_blank">lab2023 - internet teknolojileri</a> olarak bizler de, geliştirdiğimiz tüm ürünlerimizde ve Kebab Framework'ün alt yapısında Zend Framework'ü kullanmaktayız.</li>
-        <li><strong>Symfony (SF):</strong> Symfony Fransız'lar tarafından geliştirilmektedir. Bilinen bir çok frameworkun aksine tekerleği yeniden icat etmektense kabul görmüş en iyi yöntemleri kendi bünyesinde toplamayı tercih etmiştir. Bunu okadar iyi yapmıştır ki SF'yi incelediğinizde zaman zaman bazı ZF özellikleri, CI de bulunan bir plug-in, RubyOnRails'den gelme bir özellik hatta ve hatta JAVA frameworklerin bile bir takım özellikleri karşınıza çıkabilmektedir.</li>
+        <li><strong><a href="http://www.codeigniter.com/" target="_blank">CodeIgniter (CI)</a>: </strong> ExpressionEngine adındaki CMS ile paralel geliştirilen, çok geniş bir topluluğu bulunan, PHP4 ve PHP5 de çalışabilen, öğrenilmesi en kolay frameworklerden birisidir. İlk göz ağrımızdır. Bizi frameworkler ile tanıştırdığı ve ufkumuzu acaip açtığı için bende yeri ayrıdır. Birçok Facebook uygulaması CodeIgniter ile geliştirilmektedir.</li> 
+        <li><strong><a href="http://framework.zend.com/" target="_blank">Zend Framework (ZF)</a>: </strong> PHP Geliştiricileri tarafından hazırlanmıştır. PEAR kütüphaneleri gibi birbirinden bağımsız olarak kullanılmak üzere tasarlanmıştır. Bir araya geldiklerinde etkileşimli çalışacak kütüphaneler barındırır. OOP ve PHP5'i en katı şekilde uygulayan frameworklerden biridir. Öğrenilmesi biraz zor ama uzun vadede arkanızda sağlam bir şekilde duracak en kurumsal uygulama çatısıdır. <a href="http://www.lab2023.com" target="_blank">lab2023 - internet teknolojileri</a> olarak bizler de, geliştirdiğimiz tüm ürünlerimizde ve Kebab Framework'ün alt yapısında Zend Framework'ü kullanmaktayız.</li>
+        <li><strong><a href="http://www.symfony-project.com" target="_blank">Symfony (SF)</a>:</strong> Symfony Fransız'lar tarafından geliştirilmektedir. Bilinen bir çok frameworkun aksine tekerleği yeniden icat etmektense kabul görmüş en iyi yöntemleri kendi bünyesinde toplamayı tercih etmiştir. Bunu okadar iyi yapmıştır ki SF'yi incelediğinizde zaman zaman bazı ZF özellikleri, CI de bulunan bir plug-in, RubyOnRails'den gelme bir özellik hatta ve hatta JAVA frameworklerin bile bir takım özellikleri karşınıza çıkabilmektedir. Yahoo server-side uygulamalarında Symfony'i kullanmaktadır.</li>
         <li><strong>Diğerleri:</strong> CakePHP, PHPDevShell, Yii Framework, Akelos, ZooP, Kohana v.s.</li>
     </ul>
     <p>Detaylı incelemek isterseniz, <a href="http://en.wikipedia.org/wiki/Comparison_of_web_application_frameworks#PHP_2" target="_blank">PHP Frameworklerin karşılaştırma tablosunu</a> içeren bir wikipedia sayfası da var.</p>
