@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -16,6 +16,12 @@
     
     <link rel="stylesheet" href="../../../css/layout.css" media="screen" />
     <link rel="icon" type="image/png" href="../../../images/favicon.png" />
+	<style type="text/css">
+		.kaynakca
+		{
+			font-size:8pt;
+		}
+	</style>
 </head>
 <body>
 
@@ -26,7 +32,8 @@
         jQuery
     </p>
 
-    <h1>Neden Web Teknolojileri</h1>
+	<img src="http://jquery.org/wp-content/uploads/2010/01/JQuery_logo_color_onwhite-300x74.png" style="float:right" />
+    <h1>jQuery</h1>
     
     <h2>İçindekiler</h2>
     
@@ -38,70 +45,119 @@
 					<a href="#01.01" alt="">Javascript kavramı</a>
 				</li>
 				<li>
-					<a href="#01.01.99" alt="">Örnekler</a>
+					<a href="#01.02" alt="">jQuery'nin filizlenmesi</a>
+				</li>
+				<li>
+					<a href="#01.99" alt="">Örnekler</a>
 				</li>
 			</ol>
 		</li>
         <li>
-			<a href="#01.02" alt="">jQuery yapı taşları</a>
+			<a href="#02" alt="">jQuery yapı taşları</a>
 			<ol>
 				<li>
-					<a href="#01.02.01" alt="">Çekirdek (Core)</a>
+					<a href="#02.01" alt="">Çekirdeği (CORE)</a>
+					<ol>
+						<li>
+							<a href="#02.01.01" alt="">Yerleşim ve ana nesne (jQuery, window, window.jQuery, $)</a>
+						</li>
+						<li>
+							<a href="#02.01.02" alt="">Seçici (Selector)</a>
+						</li>
+						<li>
+							<a href="#02.01.03" alt="">Fonksiyonlar ($.fn)</a>
+						</li>
+					</ol>
 				</li>
 				<li>
-					<a href="#01.02.02" alt="">Kullanıcı arabirimleri (UI)</a>
+					<a href="#02.02" alt="">Kullanıcı arabirimleri (UI)</a>
 				</li>
 				<li>
-					<a href="#01.02.03" alt="">Eklentiler (Plugins)</a>
+					<a href="#02.03" alt="">Eklentiler (Plugins)</a>
 				</li>
 			</ol>
 		</li>
         <li>
-			<a href="#01.03" alt="">jQuery ile gelen yaklaşım ve farklılık</a>
+			<a href="#03" alt="">jQuery ile gelen yaklaşım ve farklılık</a>
 			<ol>
 				<li>
-					<a href="#01.03.01" alt="">Tasarım</a>
+					<a href="#03.01" alt="">Tasarım</a>
 				</li>
 				<li>
-					<a href="#01.03.02" alt="">Mimari</a>
+					<a href="#03.02" alt="">Mimari</a>
 				</li>
 				<li>
-					<a href="#01.03.99" alt="">Örnekler</a>
+					<a href="#03.99" alt="">Örnekler</a>
 				</li>
 			</ol>
-		</li>
-        <li>
-			<a href="#02" alt="">jQuery çekirdeği (CORE)</a>
-			<ol>
-				<li>
-					<a href="#02.01" alt="">Yerleşim ve ana nesne (jQuery, window, window.jQuery, $)</a>
-				</li>
-				<li>
-					<a href="#02.02" alt="">Seçici (Selector)</a>
-				</li>
-				<li>
-					<a href="#02.03" alt="">Fonksiyonlar ($.fn)</a>
-				</li>
-			</ol>
-		</li>
-        <li>
-			<a href="#03" alt="">jQuery kullanıcı arabirimleri (UI)</a>
-		</li>
-        <li>
-			<a href="#03" alt="">jQuery eklentileri (Plugins)</a>
 		</li>
     </ol>
     
-    <h2><a name="01">...</a></h2>
-    <p>...</p>
     <ol>
-        <li>...</li>
+        <li>
+			<h2><a name="01">jQuery hikayesi</a></h2>
+			<ol>
+				<li>
+					<a name="01.01"><h3>Javascript kavramı</h3></a>
+					<p>
+						JavaScript programlama dili Java platformunun bir parçası değildir.<br/>
+						JavaScript programlama dilinin Java programlama diliyle bazı ortak özellikleri vardır, ama bu dilden ayrı olarak geliştirilmiştir.<a href="http://www.java.com/tr/download/faq/java_javascript.xml" target="_blank" class="kaynakca">[Kaynak]</a>
+					</p>
+					<p>
+						Netscape Navigator 2.0 ile birlikte Brendan Eich tarafından geliştirilen ve önceleri Mocha daha sonra LiveScript olarak adlandırılan ve en sonunda şu anki adını alan JavaScript dili başlangıçta sadece istemci taraflı (client-side) yorumlanan bir web programlama dilidir.<a href="http://tr.wikipedia.org/wiki/Javascript" target="_blank" class="kaynakca">[Kaynak]</a>
+					</p>
+					<p>
+						1995 yılında piyasaya sürülen JavaScript'e muadil JScript Microsoft tarafından 1996 yılında Internet Explorer 3.0 ile birlikte piyasaya girmiştir.<br/>
+						Bununla birlikte istemcilerin kullanımın kapsamını geliştiren bu betik dili istemciler arasındaki stil tanımlarının farklı yorumlanması gibi, farklı yorumlanma sıkıntılarınıda birlikte getirmiştir.<br/>
+						Bu durumdan dolayı yaşanılan sıkıntıları gidermek için 1997 yılının Haziran ayında ilk baskısı yapılan <a href="http://www.ecmascript.org/" target="_blank">ECMAScript</a> standarlaştırma çalışması başlamıştır.<a href="http://en.wikipedia.org/wiki/ECMAScript" target="_blank" class="kaynakca">[Kaynak]</a>
+					</p>
+					<p>
+						Eski istemcilerin kullanılması ve yeni istemcilerin kendilerine özel yeteneklerinin erişimi konularında geliştiriciler halen bu sıkıntıları yaşanamaktadır.
+					</p>
+					<p>
+						Temel olan bu sorunsallar dışında, geliştiricilerin sürekli ihtiyaç duydukları;
+							<ul>
+								<li>DOM nesnelerine istemci yorumlamasından bağımsız kodlar ile erişme</li>
+								<li>Olay ve metodları istemciden yorumundan bağımsız kullanabilen kodlar yazabilme</li>
+								<li>Nesne stil ve özelliklerini istemci stil ve özellik yorumlarından bağımsız kodlar ile almak ve değiştirmek</li>
+							</ul>
+						gibi temel olarak sayılabilecek nedenlerle, geliştiriciler zamanla javascript kod kütüphanelerine sahip olmuş ve bunları açık kaynaklı olarak geliştirilmeye sunmuşlardır.
+					</p>
+					<p>
+						Sonuç olarak;<br/>
+					</p>
+				</li>
+				<li>
+					<a name="01.01"><h3>jQuery'nin filizlenmesi</h3></a>
+					<p>
+						Javascript kavramında sonuç olarak vurgulanan nedenlerden dolayı bir çok Javascript kütüphanesi ortaya çıkmıştır.<br/>
+						jQuery'de 26 Ağustos 2006 tarihinde ilk sürümünü yayınlamış olmasına rağmen aslında jQuery'i öne çıkaran gerçek değeri olan Pseudo-CSS tanımlayıcılarda kullanılan seçici yaklaşımının Javascript ile kullanılmasına dair kodlarını 22 Ağustos 2005 tarihinde <a href="http://ejohn.org/blog/selectors-in-javascript/" target="_blank">John Resig</a> kendi günlüğü üzerinden yayımlamıştır.<a href="http://jquery.org/history" target="_blank" class="kaynakca">[Kaynak]</a>
+					</p>
+					<p>
+						Kendimize soralım...
+						<p>
+							Bu fikrini yayımlak ona ne kazandırdı?
+						</p>
+						<p>
+							Bu ve benzer bir fikrin hiç çıkmadığını varsayalım. Şimdi nasıl yazılım geliştiriyor olurduk?
+						</p>
+						<p>
+							<a href="http://wikimediafoundation.org/w/index.php?title=WMFJA1/tr&utm_source=2010_JA1_Banner3&utm_medium=sitenotice&utm_campaign=fridayOpening&referrer=http://www.enginmutlu.com" target="_blank">Bir başka açıdan...</a>
+						</p>
+					</p>
+				</li>
+			</ol>
+        </li>
     </ol>   
+
+
+        &nbsp;</p>
 
     <p class="author">Hazırlayan<br/>Engin MUTLU</p>
 
 	<h3>Yararlanılan kaynaklar</h3>
 	<ol>
+		<li><a href="http://www.wikipedia.org/">Herkesin katkıda bulunabildiği Özgür Ansiklopedi : wikipedia.org</a></li>
 		<li><a href="http://docs.jquery.com/">jQuery doküman merkezi : docs.jquery.com</a></li>
 		<li><a href="http://www.authenticsociety.com/blog/jQueryPluginTutorial_Beginner">Yeni başlayanlar için plugin (İngilizce)</a></li>
 	</ol>
