@@ -16,12 +16,28 @@
     
     <link rel="stylesheet" href="../../../css/layout.css" media="screen" />
     <link rel="icon" type="image/png" href="../../../images/favicon.png" />
+
+
+	<link rel="stylesheet" href="SyntaxHighlighter/styles/shCore.css" media="screen" />
+    <link rel="stylesheet" href="SyntaxHighlighter/styles/shThemeDefault.css" media="screen" />
+	<script src="SyntaxHighlighter/scripts/shCore.js" type="text/javascript"></script>
+	<script src="SyntaxHighlighter/scripts/shBrushJScript.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+	</script>	
+
+	<link rel="stylesheet" href="jQuery/css/smoothness/jquery-ui-1.8.4.custom.css" media="screen" />
+	<script language="javascript" type="text/javascript" src="jQuery/js/jquery-1.4.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="jQuery/js/jquery-ui-1.8.4.custom.min.js"></script>
+
 	<style type="text/css">
 		.kaynakca
 		{
 			font-size:8pt;
 		}
 	</style>
+
+
 </head>
 <body>
 
@@ -36,7 +52,6 @@
     <h1>jQuery</h1>
     
     <h2>İçindekiler</h2>
-    
     <ol>
         <li>
 			<a href="#01" alt="">jQuery hikayesi</a>
@@ -92,8 +107,10 @@
 			</ol>
 		</li>
     </ol>
-    
-    <ol>
+	
+	<hr/>
+	
+	<ol>
         <li>
 			<h2><a name="01">jQuery hikayesi</a></h2>
 			<ol>
@@ -146,20 +163,56 @@
 						</p>
 					</p>
 				</li>
+				<li>
+					<a name="01.99"><h3>Örnekler</h3></a>
+					<p>
+						İstemci farklılıkları hakkında örnekler için <a href="http://www.impressivewebs.com/7-javascript-differences-between-firefox-ie/" target="_blank">impressiveweb.com</a> sitesini ziyaret ediniz.
+					</p>
+					<p>
+						Bu farklılıklara jQuery ile yaklaşım şu şekilde;<br/>
+						CSS float değeri<br/>
+						<pre class="brush: js">
+							$("#alanA").css("float");
+							$("#alanA").css("cssFloat");
+							$("#alanA").css("styleFloat");
+						</pre>
+						yukarıdaki tüm stil adları için aynı değer alınır.<br/>
+						Örneği incelemek için <a href="01.99.01.htm" target="blank">burayı tıklayınız</a>.<br/>
+						<br/>
+						Fare pozisyonu<br/>
+						<pre class="brush: js">
+							$(document).mouseover
+							(
+								function(oE)
+								{
+									$(document).text
+									(
+										"X:" + oE.pageX 
+										+ " Y:"+ oE.pageY
+									);
+								}
+							);
+						</pre>
+						Daha iyi bir örnek için <a href="http://api.jquery.com/mousemove/" target="_blank">api.jquery.com/mousemove</a> 'a bakınız.<br/>
+						<br/>
+						Saydamlık<br/>
+						<pre class="brush: js">
+							$("#hedef").fadeTo("fast", 0.2);
+						</pre>
+						Daha iyi bir örnek için <a href="http://api.jquery.com/fadeTo/" target="_blank">api.jquery.com/fadeTo</a> 'a bakınız.
+					</p>
+				</li>
 			</ol>
         </li>
     </ol>   
 
-
-        &nbsp;</p>
-
     <p class="author">Hazırlayan<br/>Engin MUTLU</p>
-
 	<h3>Yararlanılan kaynaklar</h3>
 	<ol>
 		<li><a href="http://www.wikipedia.org/">Herkesin katkıda bulunabildiği Özgür Ansiklopedi : wikipedia.org</a></li>
 		<li><a href="http://docs.jquery.com/">jQuery doküman merkezi : docs.jquery.com</a></li>
 		<li><a href="http://www.authenticsociety.com/blog/jQueryPluginTutorial_Beginner">Yeni başlayanlar için plugin (İngilizce)</a></li>
+		<li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">Kod renklendirici için SyntaxHighlighter</a></li>
 	</ol>
 
 	<h3>Önerilen kaynaklar</h3>
