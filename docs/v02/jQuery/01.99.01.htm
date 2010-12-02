@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=7.5" />
+		<meta name="author" content="Engin MUTLU (www.enginmutlu.com)" />
+
+		<title>Float farklılıkları için jQuery örneği</title>
+		<link href="favicon.ico" rel="SHORTCUT ICON" />
+		<meta http-equiv="Content-Language" content="tr" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<meta name="keywords" content="engin,mutlu,enginmutlu" />
+		<meta name="description" content="Engin MUTLU tarafından hazırlandı." />
+
+		<link rel="stylesheet" href="jQuery/css/smoothness/jquery-ui-1.8.4.custom.css" media="screen" />
+		<script language="javascript" type="text/javascript" src="jQuery/js/jquery-1.4.2.min.js"></script>
+		<script language="javascript" type="text/javascript" src="jQuery/js/jquery-ui-1.8.4.custom.min.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$
+			(
+				function()
+				{
+					var sMesaj = "";
+					sMesaj += "<br/>float : " + $("#alanA").css("float");
+					sMesaj += "<br/>cssFloat : " + $("#alanA").css("cssFloat");
+					sMesaj += "<br/>styleFloat : " + $("#alanA").css("styleFloat");
+					$("#sonuc").html(sMesaj);
+				}
+			)
+		</script>
+		<div id="alanA" style="float:left; border:1px solid red; background:red; padding:10px; margin:10px;width:100px; height:100px;">
+			alan A
+		</div>
+		<div id="sonuc" style="">
+			Sonuç buraya yazılıyor...
+		</div>
+	</body>
+</html>
