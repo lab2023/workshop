@@ -18,13 +18,11 @@
     <link rel="icon" type="image/png" href="../../../images/favicon.png" />
 
 
-	<link rel="stylesheet" href="SyntaxHighlighter/styles/shCore.css" media="screen" />
-    <link rel="stylesheet" href="SyntaxHighlighter/styles/shThemeDefault.css" media="screen" />
-	<script src="SyntaxHighlighter/scripts/shCore.js" type="text/javascript"></script>
-	<script src="SyntaxHighlighter/scripts/shBrushJScript.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		SyntaxHighlighter.all();
-	</script>	
+	<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/styles/shCoreDefault.css"/>
+	<script type="text/javascript" src="SyntaxHighlighter/scripts/shCore.js"></script>
+	<script type="text/javascript" src="SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="SyntaxHighlighter/scripts/shBrushXml.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
 
 	<link rel="stylesheet" href="jQuery/css/smoothness/jquery-ui-1.8.4.custom.css" media="screen" />
 	<script language="javascript" type="text/javascript" src="jQuery/js/jquery-1.4.2.min.js"></script>
@@ -34,6 +32,11 @@
 		.kaynakca
 		{
 			font-size:8pt;
+		}
+
+		div.line
+		{
+			font-size:10pt !important;
 		}
 	</style>
 
@@ -204,7 +207,178 @@
 				</li>
 			</ol>
         </li>
-    </ol>   
+        <li>
+			<h2><a name="02">jQuery yapı taşları</a></h2>
+			<ol>
+				<li>
+					<a name="02.01"><h3>Çekirdeği (CORE)</h3></a>
+					<ol>
+						<li>
+							<a name="02.01.01"><h4>Yerleşim ve ana nesne (jQuery, window, window.jQuery, $)</h4></a>
+							<p>
+								jQuery'in en basit hali ile yüklenmesi için üç dosya gereklidir.<br/>
+								Bu dosyalar <a href="http://jqueryui.com/download" target="_blank">jqueryui.com/download</a> sayfasından hazırlanıp indirilebilir.<br/>
+								jQuery kütüphanesi web sayfamızın HEAD tag'ı içinde şu şekilde tanımlanır;
+								<pre class="brush: xml">
+									<link rel="stylesheet" href="jQuery/css/smoothness/jquery-ui-1.8.4.custom.css" media="screen" />
+									<script language="javascript" type="text/javascript" src="jQuery/js/jquery-1.4.2.min.js"></script>
+									<script language="javascript" type="text/javascript" src="jQuery/js/jquery-ui-1.8.4.custom.min.js"></script>
+								</pre>
+							</p>
+							<p>
+								jQuery çekirdek kütüphanesi kullanım kolaylıkları sağlamak için bazı kısa tanımlar oluşturur.<br/>
+								Aşağıdaki tanımlar jQuery'e ulaşmak için varsayılan olarak kullanılabilir.<br/>
+								<pre class="brush: js">
+									window("body").text("jQuery ile erişildi.");
+									window.jQuery("body").text("jQuery ile erişildi.");
+									jQuery("body").text("jQuery ile erişildi.");
+									$("body").text("jQuery ile erişildi.");
+								</pre>
+							</p>
+							<p>
+								Bazı kütüphanelerdeki genel tanımlamalar ile çalışan durumlar oluşabilir.<br/>
+								Bu durumlarda jQuery'nin $ gibi kısa ifadelerini aşağıdaki gibi değiştirmemiz gerekir.<br/>
+								<pre class="brush: js">
+									var emJQ	= jQuery.noConflict(true);
+								</pre>
+								Örneği incelemek için <a href="02.01.99.01.htm" target="_blank">burayı tıklayın</a>.
+							</p>
+						</li>
+						<li>
+							<a name="02.01.02"><h4>Seçici (Selector)</h4></a>
+							<p>
+								Hikaye'de de vurgulandığı gibi jQuery'nin kendine özgü değeri Pseudo-CSS tanımlayıcılarda kullanılan seçici yaklaşımının Javascript ile kullanılması ve ek özelliklerinin eklenmedir.<br/>
+								jQuery seçicileri birlikte kullanıldığı gibi alanlarına göre şöyle sınıflandırılabilir;
+								<ul>
+									<li>
+										Nesnesel
+										<pre class="brush: js">
+											$("input").hide("slow");
+											$("textarea").hide("slow");
+										</pre>
+									</li>
+									<li>
+										Filtresel
+										<pre class="brush: js">
+											/*
+											 Aşağıdaki kod çalıştığı sırada animasyon halindeki 
+											div'in class'ına "parlak" class'ı eklenir, varsa kaldırılır.
+											*/
+											$("div:animated").toggleClass("parlak");
+										</pre>
+									</li>
+									<li>
+										Özelliksel
+										<pre class="brush: js">
+											//değeri boş olan input nesnelerine kırmızı bir çerçeve atar.
+											$("input[value='']").css("border", "1px solid red");
+										</pre>
+									</li>
+									<li>
+										Hiyararşik
+										<pre class="brush: js">
+											//DOM içindeki en son DIV içindeki ilk nesnenin yazı tipini kalın yapar.
+											$("div:last>:first").css("font-weight", "bold");
+										</pre>
+									</li>
+								</ul>
+								Daha fazla bilgi için <a href="http://api.jquery.com/category/selectors/" target="_blank">api.jquery.com/category/selectors</a>'a bakınız.
+							</p>
+						</li>
+						<li>
+							<a name="02.01.03"><h4>Fonksiyonlar ($.fn)</h4></a>
+							<p>
+								jQuery.fn sınıfı kendi eklentilerinizi yazabileceğiniz bir araç olarak kullanabilirsiniz.<br/>
+								Bu sınıfa bir eklenti eklemek için iki yazılım kalıbı kullanılabilir.<br/>
+								Bunlar;
+								<pre class="brush: js">
+									// A Kalıbı
+									jQuery.fn.uyariVer = function(sMesaj)
+									{
+									  alert("Uyarı" + sMesaj);
+									};
+								</pre>
+								<pre class="brush: js">
+									// B Kalıbı (Önerilen; çünkü bu şekilde diğer kütüphanelerdeki $ gibi ifadeler nedeniyle bir karışıklık olmaz.)
+									(
+										function($)
+										{
+											$.fn.uyariVer = function(sMesaj)
+											{
+											  alert("Uyarı" + sMesaj);
+											};
+										}
+									)( jQuery );
+								</pre>
+								Daha fazla bilgi için <a href="http://docs.jquery.com/Plugins/Authoring" target="_blank">docs.jquery.com/Plugins/Authoring</a>'a bakınız.
+							</p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<a name="02.02"><h3>Kullanıcı arabirimleri (UI)</h3></a>
+					<p>
+						Kullanıcı arabirimleri jQuery çekirdeği üzerinde etkileşimler ve css tanımlarını kullanan araçlardan oluşur.<br/>
+						<br/>
+						Etkileşimler
+						<ul>
+							<li>Taşınabilirlik (Draggable)</li>
+							<li>Aktarılabilirlik (Droppable)</li>
+							<li>Boyutlandırılabilirlik (Resizable)</li>
+							<li>Seçilebilirlik (Selectable)</li>
+							<li>Sıralanabilirlik (Sortable)</li>
+						</ul>
+						<br/>
+						Araçlar
+						<ul>
+							<li>Akordiyon gezinti (Accordion)</li>
+							<li>Otomatik tamamlama (Autocomplete)</li>
+							<li>Düğme (Button)</li>
+							<li>Kaydırma çubuğu (Slider)</li>
+							<li>Sekmeler (Tabs)</li>
+							<li>Tarih seçici (Datepicker)</li>
+							<li>İşlem bildirimi (Progressbar)</li>
+						</ul>
+						<br/>
+						Örnek kodlara <a href="http://jqueryui.com/demos/" target="_blank">jqueryui.com/demos</a>'dan erişebilirsiniz.
+					</p>
+				</li>
+				<li>
+					<a name="02.03"><h3>Eklentiler (Plugins)</h3></a>
+					Dünyanın birçok yerinden jQuery kullanan kişiler <a href="http://plugins.jquery.com/" target="_blank">plugins.jquery.com</a> aracılığı ile henüz kararlı sürümde yayımlanmayan araçlarını buradan yayımlamaktalar.<br/>
+					<br/>
+					Gridlerden grafik gösterimlere, menü'lerden animasyonlara kadar değişik türde birçok eklentiyi buradan edinebilir, geliştirilmesine katkıda bulunabilirsiniz.<br/>
+					<br/>
+					<a href="http://www.filamentgroup.com/" target="_blank">filamentgroup.com</a> bu alanda jQuery topluluğuna en çok katkıda bulunan yazılım gruplarından biridir.<br/>
+					<br/>
+					Soru : Peki biz olamaz mıyız?<br/>
+					...
+				</li>
+			</ol>
+        </li>
+        <li>
+			<h2><a name="03">jQuery ile gelen yaklaşım ve farklılık</a></h2>
+			<ol>
+				<li>
+					<a name="03.01"><h3>Tasarım</h3></a>
+					<p>
+						jQuery kullanıcı arabirimleri ile gelen özellikler sayesinde "daha az yazarak, daha çok" içerik sunulması sağlanabilmektedir.<br/>
+						Temelde prototip kavramlı bu yaklaşım ile var olan tasarıma birkaç jQuery kodu yazılması ile kullanıcı deneyimini arttıran tasarımlar elde etmek mümkün olur.<br/>
+					</p>
+				</li>
+				<li>
+					<a name="03.02"><h3>Mimari</h3></a>
+					<p>
+						PHP ve ASP kodlarının kütüphanelerin oluşması ile html kodlarından ayrılması ve .NET gibi platformlarda CodeBehind kavramlarının gelmesi gibi jQuery'de istemci tarafında çalışan betiklerin DOM nesnesinden kısmen ayrılmasını sağlayabilmektedir.<br/>
+						Bu ham html nesnelerin CSS ile şekillendirilmesinde olduğu gibi istemci kodlamayı tamamen ayrılmasına olanak sağlar.
+					</p>
+				</li>
+				<li>
+					<a name="03.99"><h3>Örnekler</h3></a>
+				</li>
+			</ol>
+		</li>
+	</ol>   
 
     <p class="author">Hazırlayan<br/>Engin MUTLU</p>
 	<h3>Yararlanılan kaynaklar</h3>
